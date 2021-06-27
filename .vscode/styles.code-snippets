@@ -1,0 +1,23 @@
+{
+
+	"Styles gamePlay": {
+		"scope": "javascript,typescript",
+		"prefix": "styles",
+		"body": [
+			"import { StyleSheet } from 'react-native';",
+			"import { theme } from '../../global/styles/theme';",
+			"import { getStatusBarHeight } from 'react-native-iphone-x-helper';",
+			"",
+			"",
+			"export const styles = StyleSheet.create({",
+			"",
+			"container:{",
+			    "",
+			"},",
+
+
+			"});"
+		],
+		"description": "Log output to console"
+	}
+}
