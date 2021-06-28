@@ -48,9 +48,9 @@ export function Home() {
         categoryId === category ? setCategory('') : setCategory(categoryId)
     }
 
-    function handleAppointmentDetails(){
-        navigation.navigate("AppointmentDetails");
-    }
+    // function handleAppointmentDetails(){
+    //     navigation.navigate("AppointmentDetails");
+    // }
 
     function handleAppointmentCreate(){
         navigation.navigate("AppointmentCreate");
@@ -77,7 +77,7 @@ export function Home() {
                     renderItem={({ item })=>(
                         <Appointments 
                             data={item} 
-                            onPress={handleAppointmentDetails}
+                            onPress={handleAppointmentCreate}
                 />
                     )}
                     ItemSeparatorComponent={() => <ListDivider/>}
