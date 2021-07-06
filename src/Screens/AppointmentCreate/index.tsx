@@ -18,7 +18,7 @@ import { theme } from '../../global/styles/theme';
 import { styles } from './styles';
 
 import BannerImg from '../../assets/banner.png'
-import { GuildProps } from '../../components/Appointments';
+import { GuildProps } from '../../components/Guild';
 
 export function AppointmentCreate() {
 
@@ -30,9 +30,17 @@ export function AppointmentCreate() {
     setOpenGuildsModal(true)
   }
 
+  function handleCloseGuilds(){
+    setOpenGuildsModal(false)
+  }
+
   function handleGuildSelect(guildSelect: GuildProps){
     setGuild(guildSelect);
     setOpenGuildsModal(false);
+  }
+
+  function handleCategorySelect(categoryId: string){
+    categoryId === category ? setCategory('') : setCategory(categoryId)
   }
   
   return (
@@ -48,7 +56,7 @@ export function AppointmentCreate() {
           <Text style={[styles.label, {marginLeft:24, marginTop: 36, marginBottom: 18}]}> Categoria </Text>
           <CategorySelect
             hasCheckBox
-            setCategory={setCategory}
+            setCategory={handleCategorySelect}
             categorySelected={category}
           />
           <View style={styles.form}>
@@ -77,7 +85,7 @@ export function AppointmentCreate() {
 
             <View style={styles.field}>
                 <View>
-                  <Text style={styles.label}>
+                  <Text style={[styles.label, { marginBottom: 12} ]}>
                     Dia e mês
                   </Text>
                   <View style={styles.column}>
@@ -88,7 +96,7 @@ export function AppointmentCreate() {
                 </View>
 
                 <View>
-                  <Text style={styles.label}>
+                  <Text style={[styles.label, { marginBottom: 12} ]}>
                     Hora e Min
                   </Text>
                   <View style={styles.column}>
@@ -120,7 +128,7 @@ export function AppointmentCreate() {
          
       </Background>
       </ScrollView>
-      <ModalView visible={openGuildsModal}>
+      <ModalView visible={openGuildsModal} closeModal={handleCloseGuilds}>
         <Guilds handleGuildSelect={handleGuildSelect}/>
       </ModalView>
       </KeyboardAvoidingView>
