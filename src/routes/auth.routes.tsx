@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { Home } from "../Screens/Home";
-import { SignIn } from "../Screens/SignIn";
+
 import { AppointmentDetails } from "../Screens/AppointmentDetails";
 import { AppointmentCreate } from "../Screens/AppointmentCreate";
 
@@ -19,11 +19,6 @@ export function AuthRoutes() {
                 }
             }}
         >
-            <Screen
-                name="SignIn"
-                component={SignIn}
-            />
-
             <Screen
                 name="Home"
                 component={Home}
